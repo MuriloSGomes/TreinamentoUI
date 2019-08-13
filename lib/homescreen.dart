@@ -10,7 +10,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Container(
               height: 350,
@@ -49,10 +49,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF4527A0), Color(0xFF7E57C2)],
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  stops: [0.3, 1.0],
+                )
+              ),
               height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.only(top: 62),
-              child: Column(
+              child: ListView(
+                padding: EdgeInsets.all(50),
                 children: <Widget>[
                   Container(
                     width: MediaQuery.of(context).size.width / 1.2,

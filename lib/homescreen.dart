@@ -12,12 +12,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          stops: [0, 0.4],
-          colors: [Color(0xFF385ff1), Color(0xFF7414d8)],
-        )),
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            end: Alignment.topCenter,
+            stops: [0, 0.5],
+            colors: [Color(0xFF385ff1), Color(0xFF7414d8)],
+          ),
+        ),
         child: ListView(
           children: <Widget>[
             Container(
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           'smartie',
                           style: TextStyle(
-                            letterSpacing: 5,
+                              letterSpacing: 5,
                               fontFamily: 'Comfortaa',
                               color: Colors.grey,
                               fontSize: 43),
@@ -140,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Align(
                             heightFactor: 0,
-                            alignment: Alignment(0.9,0),
+                            alignment: Alignment(0.9, 0),
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.white,

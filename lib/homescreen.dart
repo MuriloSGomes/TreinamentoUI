@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,13 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: LinearGradient(
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
-          stops: [0.1, 0.46],
+          stops: [0, 0.4],
           colors: [Color(0xFF385ff1), Color(0xFF7414d8)],
         )),
         child: ListView(
           children: <Widget>[
             Container(
-              height: 300,
+              height: 270,
               width: MediaQuery.of(context).size.width,
               child: ClipPath(
                 clipper: HeaderColor(),
@@ -42,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           'smartie',
                           style: TextStyle(
+                            letterSpacing: 5,
                               fontFamily: 'Comfortaa',
                               color: Colors.grey,
                               fontSize: 43),
@@ -52,84 +54,121 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            Container(
-              child: Column(
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.center,
-                    heightFactor: 2.4,
-                    child: Text(
-                      'Hi There!',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.white,
-                          fontSize: 16),
-                    ),
-                  ),
-                  Align(
-                    heightFactor: 0,
-                    child: Text(
-                      'Login to Continue',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.white,
-                          fontSize: 16),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: "Email or Username",
-                      labelStyle: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.grey,
-                          fontSize: 18),
-                      suffixIcon: Icon(Icons.person_outline),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.text,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        labelText: "Password",
-                        labelStyle: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18,
-                        ),
-                        suffixIcon: Icon(Icons.lock_outline)),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width/1.2,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Color(0xFFf45d27), Color(0xFFf581f)]
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(50))
-                    ),
-                    child: Center(
+            Padding(
+              padding: const EdgeInsets.all(50),
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
                       child: Text(
-                        'Login',
+                        'Hi There!',
                         style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.white,
-                          fontSize: 15
-                        ),
+                            fontFamily: 'Comfortaa',
+                            color: Colors.white,
+                            fontSize: 16),
                       ),
                     ),
-                  )
-                ],
+                    Align(
+                      heightFactor: 2,
+                      child: Text(
+                        'Login to Continue',
+                        style: TextStyle(
+                            fontFamily: 'Comfortaa',
+                            color: Colors.white,
+                            fontSize: 16),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(1),
+                        labelText: "Email or Username",
+                        labelStyle: TextStyle(
+                            fontFamily: 'Comfortaa',
+                            color: Colors.grey,
+                            fontSize: 17),
+                        suffixIcon: Icon(Icons.person_outline),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.text,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(1),
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            fontFamily: 'Comfortaa',
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17,
+                          ),
+                          suffixIcon: Icon(Icons.lock_outline)),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 55,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFf7769c), Color(0xFFf99587)]),
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Align(
+                            heightFactor: 0,
+                            child: Center(
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                    fontFamily: 'Comfortaa',
+                                    color: Colors.white,
+                                    fontSize: 15),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            heightFactor: 0,
+                            alignment: Alignment(0.9,0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              heightFactor: 0,
+              alignment: Alignment(-0.7, 0.1),
+              child: Text(
+                'Register',
+                style: TextStyle(
+                    fontFamily: 'Comfortaa', color: Colors.grey, fontSize: 16),
+              ),
+            ),
+            Align(
+              heightFactor: 0.1,
+              alignment: Alignment(0.7, 0.1),
+              child: Text(
+                'Forgot?',
+                style: TextStyle(
+                    fontFamily: 'Comfortaa', color: Colors.grey, fontSize: 16),
               ),
             )
           ],

@@ -1,3 +1,4 @@
+import 'package:desafioux/roompage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -84,7 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 20,
                     ),
                     TextFormField(
-                      obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(1),
@@ -124,30 +124,38 @@ class _HomeScreenState extends State<HomeScreen> {
                             colors: [Color(0xFFf7769c), Color(0xFFf99587)]),
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Align(
-                            heightFactor: 0,
-                            child: Center(
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                    fontFamily: 'Comfortaa',
-                                    color: Colors.white,
-                                    fontSize: 15),
+                      child: FlatButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Align(
+                              heightFactor: 0,
+                              widthFactor: 5.5,
+                              child: Center(
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                      fontFamily: 'Comfortaa',
+                                      color: Colors.white,
+                                      fontSize: 15),
+                                ),
                               ),
                             ),
-                          ),
-                          Align(
-                            heightFactor: 0,
-                            alignment: Alignment(0.9, 0),
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
+                            Align(
+                              heightFactor: 0,
+                              widthFactor: 0,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,MaterialPageRoute(builder: (context)=> RoomPage())
+                          );
+                        },
                       ),
                     ),
                   ],

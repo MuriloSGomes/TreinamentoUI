@@ -34,7 +34,9 @@ class _RoomPageState extends State<RoomPage> {
               child: IconButton(
                 icon: Icon(Icons.add_circle_outline,
                     color: Colors.blueAccent, size: 40),
-                onPressed: () {},
+                onPressed: () {
+                  _showDialog(context);
+                },
               ),
             ),
           ],
@@ -43,46 +45,98 @@ class _RoomPageState extends State<RoomPage> {
       body: Stack(
         children: <Widget>[
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+            child: ListView(
+              padding: EdgeInsets.all(12),
               children: <Widget>[
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  height: 230,
-                  width: 350,
-                  alignment: Alignment.bottomLeft,
-                  padding: EdgeInsets.only(left: 10.0, bottom: 8.0, top: 200),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://http2.mlstatic.com/cozinha-completa-balco-com-tampo-5-pecas-carrara-i-hd-D_NQ_NP_695102-MLB27156797377_042018-F.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
+                RaisedButton(
+                  color: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        'Kitchen',
-                        style: TextStyle(
-                            fontFamily: 'Comfortaa',
-                            fontSize: 20,
-                            color: Colors.white),
+                  onPressed: (){},
+                  padding: EdgeInsets.all(0),
+                  child: Container(
+                    height: 230,
+                    width: 390,
+                    padding: EdgeInsets.only(left: 10.0, bottom: 8.0, top: 200),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://http2.mlstatic.com/cozinha-completa-balco-com-tampo-5-pecas-carrara-i-hd-D_NQ_NP_695102-MLB27156797377_042018-F.jpg"),
+                        fit: BoxFit.cover,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Text(
-                          '3 Devices',
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Kitchen',
                           style: TextStyle(
                               fontFamily: 'Comfortaa',
                               fontSize: 20,
                               color: Colors.white),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Text(
+                            '3 Devices',
+                            style: TextStyle(
+                                fontFamily: 'Comfortaa',
+                                fontSize: 20,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                RaisedButton(
+                  onPressed: (){},
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  padding: EdgeInsets.all(0),
+                  child: Container(
+                    height: 230,
+                    width: 390,
+                    padding: EdgeInsets.only(left: 10.0, bottom: 8.0, top: 200),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://www.thespruce.com/thmb/DLwpM9BE0qxLbHZTTtrSXX88kaU=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-9261821821-5c69c1b7c9e77c0001675a49.jpg"),
+                        fit: BoxFit.cover,
                       ),
-                    ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Living Room',
+                          style: TextStyle(
+                              fontFamily: 'Comfortaa',
+                              fontSize: 20,
+                              color: Colors.white),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Text(
+                            '5 Devices',
+                            style: TextStyle(
+                                fontFamily: 'Comfortaa',
+                                fontSize: 20,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -91,7 +145,7 @@ class _RoomPageState extends State<RoomPage> {
                 DashedContainer(
                   child: Container(
                     height: 230,
-                    width: 350,
+                    width: 390,
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -138,4 +192,24 @@ class _RoomPageState extends State<RoomPage> {
       ),
     );
   }
+}
+
+void _showDialog(context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          AlertDialog(
+            content: Container(
+              height: 150.0,
+              decoration: BoxDecoration(
+                  color: Colors.pink, borderRadius: BorderRadius.circular(20)),
+            ),
+          ),
+        ],
+      );
+    },
+  );
 }

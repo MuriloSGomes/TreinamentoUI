@@ -202,10 +202,13 @@ void _showDialog(context) {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           AlertDialog(
-            content: Container(
-              height: 150.0,
+            titlePadding: EdgeInsets.all(0),
+            title: Container(
+            height: 30.00,
+            width: 300.00,
               decoration: BoxDecoration(
-                  color: Colors.pink, borderRadius: BorderRadius.circular(20)),
+                color: Colors.pink, 
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
             ),
           ),
         ],

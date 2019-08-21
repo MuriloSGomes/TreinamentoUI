@@ -1,6 +1,9 @@
+import 'package:desafioux/entities/room.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dashed_container/dashed_container.dart';
+
+import 'EditPage/room-edit.dart';
 
 class RoomPage extends StatefulWidget {
   @override
@@ -8,6 +11,14 @@ class RoomPage extends StatefulWidget {
 }
 
 class _RoomPageState extends State<RoomPage> {
+
+  var listRooms = List<RoomModel>()..add(
+    RoomModel(
+      image: 'lib/assets/kitchen.jpg',
+      nomeImage: 'Kitchen'
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +66,7 @@ class _RoomPageState extends State<RoomPage> {
                   color: Colors.transparent,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  onPressed: () {},
+
                   padding: EdgeInsets.all(0),
                   child: Container(
                     height: 230,
@@ -91,12 +102,14 @@ class _RoomPageState extends State<RoomPage> {
                       ],
                     ),
                   ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => RoomEdit()));
+                  },
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 RaisedButton(
-                  onPressed: () {},
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   padding: EdgeInsets.all(0),
@@ -134,6 +147,7 @@ class _RoomPageState extends State<RoomPage> {
                       ],
                     ),
                   ),
+                  onPressed: () {},
                 ),
                 SizedBox(
                   height: 20,

@@ -12,7 +12,7 @@ class _RoomPageState extends State<RoomPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(95.0),
+        preferredSize: const Size.fromHeight(80.0),
         child: AppBar(
           elevation: 10,
           backgroundColor: Colors.white,
@@ -54,9 +54,8 @@ class _RoomPageState extends State<RoomPage> {
                 RaisedButton(
                   color: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  onPressed: (){},
+                      borderRadius: BorderRadius.circular(20)),
+                  onPressed: () {},
                   padding: EdgeInsets.all(0),
                   child: Container(
                     height: 230,
@@ -64,8 +63,7 @@ class _RoomPageState extends State<RoomPage> {
                     padding: EdgeInsets.only(left: 10.0, bottom: 8.0, top: 200),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(
-                            "https://http2.mlstatic.com/cozinha-completa-balco-com-tampo-5-pecas-carrara-i-hd-D_NQ_NP_695102-MLB27156797377_042018-F.jpg"),
+                        image: AssetImage('lib/assets/kitchen.jpg'),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -98,10 +96,9 @@ class _RoomPageState extends State<RoomPage> {
                   height: 20,
                 ),
                 RaisedButton(
-                  onPressed: (){},
+                  onPressed: () {},
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
+                      borderRadius: BorderRadius.circular(20)),
                   padding: EdgeInsets.all(0),
                   child: Container(
                     height: 230,
@@ -109,8 +106,7 @@ class _RoomPageState extends State<RoomPage> {
                     padding: EdgeInsets.only(left: 10.0, bottom: 8.0, top: 200),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(
-                            "https://www.thespruce.com/thmb/DLwpM9BE0qxLbHZTTtrSXX88kaU=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-9261821821-5c69c1b7c9e77c0001675a49.jpg"),
+                        image: AssetImage('lib/assets/livingRoom.jpg'),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -201,16 +197,78 @@ void _showDialog(context) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          AlertDialog(
-            titlePadding: EdgeInsets.all(0),
-            title: Container(
-            height: 30.00,
-            width: 300.00,
-              decoration: BoxDecoration(
-                color: Colors.pink, 
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
-            ),
-          ),
+          SimpleDialog(
+              title: Align(
+                heightFactor: 0.2,
+                alignment: Alignment(1.1, -0.4),
+                child: IconButton(
+                    icon: Icon(
+                      Icons.cancel,
+                      size: 40,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+              ),
+              children: <Widget>[
+                Container(
+                  height: 50,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [Color(0xFFf7769c), Color(0xFFf99587)]),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                  child: FlatButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Align(
+                            child: Text(
+                              'Add Room',
+                              style: TextStyle(
+                                  fontFamily: 'Comfortaa',
+                                  color: Colors.white,
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {}),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 50,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [Color(0xFF385ff1), Color(0xFF7414d8)]),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                  child: FlatButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Align(
+                            child: Text(
+                              'Add Device',
+                              style: TextStyle(
+                                  fontFamily: 'Comfortaa',
+                                  color: Colors.white,
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ],
+                      ),
+                      onPressed: () {}),
+                ),
+              ],
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
+              contentPadding: EdgeInsets.all(40))
         ],
       );
     },

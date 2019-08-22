@@ -51,8 +51,12 @@ flutter:
     - lib/assets/flutterlogo.png
     - lib/assets/kitchen.jpg
     - lib/assets/livingRoom.jpg
-    - lib/assets/arCondicionado.png
+    - lib/assets/ar.png
     - lib/assets/lampada.png
+    - lib/assets/camera.png
+    - lib/assets/lampada2.png
+    - lib/assets/ice.png
+    - lib/assets/settings.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

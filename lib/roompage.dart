@@ -11,13 +11,10 @@ class RoomPage extends StatefulWidget {
 }
 
 class _RoomPageState extends State<RoomPage> {
-
-  var listRooms = List<RoomModel>()..add(
-    RoomModel(
-      image: 'lib/assets/kitchen.jpg',
-      nomeImage: 'Kitchen'
-    ),
-  );
+  var livingRoom =
+      RoomModel(nomeImage: 'Living Room', image: 'lib/assets/livingRoom.jpg');
+  var kitchen =
+      RoomModel(nomeImage: 'Kitchen', image: 'lib/assets/kitchen.jpg');
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +54,7 @@ class _RoomPageState extends State<RoomPage> {
         children: <Widget>[
           Center(
             child: ListView(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(10),
               children: <Widget>[
                 SizedBox(
                   height: 20,
@@ -66,7 +63,6 @@ class _RoomPageState extends State<RoomPage> {
                   color: Colors.transparent,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-
                   padding: EdgeInsets.all(0),
                   child: Container(
                     height: 230,
@@ -103,7 +99,14 @@ class _RoomPageState extends State<RoomPage> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => RoomEdit()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RoomEdit(
+                          room: kitchen,
+                        ),
+                      ),
+                    );
                   },
                 ),
                 SizedBox(
@@ -147,7 +150,16 @@ class _RoomPageState extends State<RoomPage> {
                       ],
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RoomEdit(
+                          room: livingRoom,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(
                   height: 20,
@@ -212,19 +224,20 @@ void _showDialog(context) {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           SimpleDialog(
-              title: Align(
-                heightFactor: 0.2,
-                alignment: Alignment(1.1, -0.4),
-                child: IconButton(
-                    icon: Icon(
-                      Icons.cancel,
-                      size: 40,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-              ),
               children: <Widget>[
+                Align(
+                  heightFactor: 0,
+                  widthFactor: 2,
+                  alignment: Alignment(1.4, 0.72),
+                  child: IconButton(
+                      icon: Icon(
+                        Icons.cancel,
+                        size: 40,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }),
+                ),
                 Container(
                   height: 50,
                   width: 250,
@@ -244,6 +257,15 @@ void _showDialog(context) {
                                   fontFamily: 'Comfortaa',
                                   color: Colors.white,
                                   fontSize: 20),
+                            ),
+                          ),
+                          Align(
+                            heightFactor: 0,
+                            widthFactor: 0,
+                            alignment: Alignment(-4, 0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -272,6 +294,15 @@ void _showDialog(context) {
                                   fontFamily: 'Comfortaa',
                                   color: Colors.white,
                                   fontSize: 20),
+                            ),
+                          ),
+                          Align(
+                            heightFactor: 0,
+                            widthFactor: 0,
+                            alignment: Alignment(-4, 0),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
                             ),
                           ),
                         ],

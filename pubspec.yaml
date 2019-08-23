@@ -57,6 +57,9 @@ flutter:
     - lib/assets/lampada2.png
     - lib/assets/ice.png
     - lib/assets/settings.png
+    - lib/assets/rec.png
+    - lib/assets/play.png
+    - lib/assets/lamp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

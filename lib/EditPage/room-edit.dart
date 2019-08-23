@@ -96,30 +96,43 @@ class RoomEdit extends StatelessWidget {
                   TextStyle(fontFamily: 'Comfortaa', color: Colors.blueAccent),
             ),
           ),
-          Align(
-            alignment: Alignment(-0.93, -0.34),
-            child: SizedBox(
-              height: 35,
-              child: Image(
-                image: AssetImage('lib/assets/ice.png'),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 14),
+                child: Align(
+                  alignment: Alignment(-0.93, -0.34),
+                  child: SizedBox(
+                    height: 35,
+                    child: Image(
+                      image: AssetImage('lib/assets/ice.png'),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Align(
-            alignment: Alignment(-0.75, -0.32),
-            child: Text(
-              '25°',
-              style: TextStyle(fontFamily: 'Comfortaa', color: Colors.grey, fontSize: 15),
-            ),
-          ),
-          Align(
-            alignment: Alignment(-0.23, -0.34),
-            child: SizedBox(
-              height: 25,
-              child: Image(
-                image: AssetImage('lib/assets/settings.png'),
+              Align(
+                alignment: Alignment(-0.75, -0.32),
+                child: Text(
+                  '25°',
+                  style: TextStyle(
+                      fontFamily: 'Comfortaa',
+                      color: Colors.grey,
+                      fontSize: 15),
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.only(left: 75),
+                child: Align(
+                  alignment: Alignment(-0.23, -0.34),
+                  child: SizedBox(
+                    height: 25,
+                    child: Image(
+                      image: AssetImage('lib/assets/settings.png'),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Align(
             alignment: Alignment(0.9, -0.9),
@@ -139,25 +152,33 @@ class RoomEdit extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment(0.66, -0.9),
-            child: SizedBox(
-              height: 90,
-              child: Image(
-                image: AssetImage('lib/assets/lampada.png'),
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 16),
+                child: Align(
+                  alignment: Alignment(0.66, -0.9),
+                  child: SizedBox(
+                    height: 90,
+                    child: Image(
+                      image: AssetImage('lib/assets/lampada.png'),
+                    ),
+                  ),
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Align(
+                  alignment: Alignment(0.7, -0.53),
+                  child: Text(
+                    'Central Lamp',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa', color: Colors.blueAccent),
+                  ),
+                ),
+              ),
+            ],
           ),
-
-          Align(
-            alignment: Alignment(0.7, -0.53),
-            child: Text(
-              'Central Lamp',
-              style:
-              TextStyle(fontFamily: 'Comfortaa', color: Colors.blueAccent),
-            ),
-          ),
-
           Align(
             alignment: Alignment(-0.9, 0.5),
             child: Container(
@@ -176,7 +197,6 @@ class RoomEdit extends StatelessWidget {
               ),
             ),
           ),
-
           Align(
             alignment: Alignment(-0.72, 0.17),
             child: SizedBox(
@@ -187,9 +207,56 @@ class RoomEdit extends StatelessWidget {
             ),
           ),
           Align(
+            alignment: Alignment(-0.64, 0.37),
+            child: Text(
+              'Live Camera',
+              style:
+              TextStyle(fontFamily: 'Comfortaa', color: Colors.blueAccent),
+            ),
+          ),
+
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 14),
+                child: Align(
+                  alignment: Alignment(-0.89, 0.62),
+                  child: SizedBox(
+                    height: 15,
+                    child: Image(
+                      image: AssetImage('lib/assets/rec.png'),
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment(-0.79, 0.62),
+                child: Text(
+                  'Rec',
+                  style: TextStyle(
+                      fontFamily: 'Comfortaa',
+                      color: Colors.grey,
+                      fontSize: 13),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 100),
+                child: Align(
+                  alignment: Alignment(-0.89, 0.62),
+                  child: SizedBox(
+                    height: 15,
+                    child: Image(
+                      image: AssetImage('lib/assets/play.png'),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Align(
             alignment: Alignment(0.9, 0.5),
             child: Container(
-              alignment: Alignment(0, 0.4),
+              alignment: Alignment(0, 0.65),
               child: Switch(
                 inactiveThumbColor: Colors.white,
                 inactiveTrackColor: Colors.grey,
@@ -198,11 +265,27 @@ class RoomEdit extends StatelessWidget {
               height: 170,
               width: 170,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage('')),
                 color: Colors.white70,
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(20),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0.65, 0.18),
+            child: SizedBox(
+              height: 80,
+              child: Image(
+                image: AssetImage('lib/assets/lamp.png'),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0.7, 0.39),
+            child: Text(
+              'Corner Lamp',
+              style:
+              TextStyle(fontFamily: 'Comfortaa', color: Colors.blueAccent),
             ),
           ),
         ],

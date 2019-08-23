@@ -97,28 +97,6 @@ class RoomEdit extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(0.9, -0.9),
-            child: Container(
-              alignment: Alignment(0, 0.65),
-              child: Switch(
-                inactiveThumbColor: Colors.white,
-                inactiveTrackColor: Colors.orange,
-                value: true,
-              ),
-              height: 170,
-              width: 170,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  alignment: Alignment(0,-1),
-                  image: AssetImage('lib/assets/lampada.png')
-                ),
-                color: Colors.white,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-          Align(
             alignment: Alignment(-0.93, -0.34),
             child: SizedBox(
               height: 35,
@@ -144,6 +122,43 @@ class RoomEdit extends StatelessWidget {
             ),
           ),
           Align(
+            alignment: Alignment(0.9, -0.9),
+            child: Container(
+              alignment: Alignment(0, 0.65),
+              child: Switch(
+                inactiveThumbColor: Colors.white,
+                inactiveTrackColor: Colors.orange,
+                value: true,
+              ),
+              height: 170,
+              width: 170,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0.66, -0.9),
+            child: SizedBox(
+              height: 90,
+              child: Image(
+                image: AssetImage('lib/assets/lampada.png'),
+              ),
+            ),
+          ),
+
+          Align(
+            alignment: Alignment(0.7, -0.53),
+            child: Text(
+              'Central Lamp',
+              style:
+              TextStyle(fontFamily: 'Comfortaa', color: Colors.blueAccent),
+            ),
+          ),
+
+          Align(
             alignment: Alignment(-0.9, 0.5),
             child: Container(
               alignment: Alignment(0, 0.6),
@@ -161,6 +176,7 @@ class RoomEdit extends StatelessWidget {
               ),
             ),
           ),
+
           Align(
             alignment: Alignment(-0.72, 0.17),
             child: SizedBox(
@@ -183,7 +199,7 @@ class RoomEdit extends StatelessWidget {
               width: 170,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage('')),
-                color: Colors.white,
+                color: Colors.white70,
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(20),
               ),

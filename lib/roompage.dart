@@ -1,4 +1,5 @@
 import 'package:desafioux/entities/room.dart';
+import 'package:desafioux/newroompage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dashed_container/dashed_container.dart';
@@ -270,7 +271,9 @@ void _showDialog(context) {
                           ),
                         ],
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewRoomPage()));
+                      }),
                 ),
                 SizedBox(
                   height: 20,
@@ -307,7 +310,9 @@ void _showDialog(context) {
                           ),
                         ],
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+
+                      }),
                 ),
               ],
               backgroundColor: Colors.white,

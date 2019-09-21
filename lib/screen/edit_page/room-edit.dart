@@ -1,4 +1,4 @@
-import 'package:desafioux/entities/room.dart';
+import 'package:desafioux/model/room_model.dart';
 import 'package:flutter/material.dart';
 
 class RoomEdit extends StatelessWidget {

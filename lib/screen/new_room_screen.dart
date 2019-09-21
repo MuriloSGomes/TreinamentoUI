@@ -26,7 +26,7 @@ class _NewRoomPageState extends State<NewRoomPage> {
           ),
         ),
       ),
-      bottomNavigationBar: ,
+      //bottomNavigationBar: ,
     );
   }
 }

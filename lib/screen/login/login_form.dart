@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import 'dart:math';
-
->>>>>>> 4bb5efc714e4da19338a72bf620b9e3ba4ac8e70
 import 'package:desafioux/services/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

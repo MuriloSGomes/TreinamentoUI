@@ -1,6 +1,7 @@
+import 'package:desafioux/screen/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'loginpage.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }

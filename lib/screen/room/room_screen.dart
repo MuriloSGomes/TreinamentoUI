@@ -1,4 +1,8 @@
 import 'package:desafioux/model/room_model.dart';
+<<<<<<< HEAD
+=======
+import 'package:desafioux/screen/edit_page/room-edit.dart';
+>>>>>>> 4bb5efc714e4da19338a72bf620b9e3ba4ac8e70
 import 'package:desafioux/screen/new_room_screen.dart';
 import 'package:desafioux/screen/widget_helper.dart';
 import 'package:flutter/cupertino.dart';

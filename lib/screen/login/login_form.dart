@@ -1,3 +1,4 @@
+import 'package:desafioux/model/usuario_model.dart';
 import 'package:desafioux/services/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -10,6 +11,10 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+
+  TextEditingController email = new TextEditingController();
+  TextEditingController senha = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,6 +46,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
+              controller: email,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(1),
                 labelText: "Email or Username",
@@ -56,6 +62,7 @@ class _LoginFormState extends State<LoginForm> {
               height: 10,
             ),
             TextField(
+              controller: senha,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -81,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                   Color(0xFFf7769c),
                   Color(0xFFf99587),
                 ]),
-                borderRadius: BorderRadius.all(Radius.circular(50)),
+                borderRadius: BorderRadius.all(Radius.circular(60)),
               ),
               child: FlatButton(
                 shape: RoundedRectangleBorder(
@@ -113,8 +120,8 @@ class _LoginFormState extends State<LoginForm> {
                 ),
                 onPressed: () async {
                   var result = await LoginService().loginValido(
-                    usuario: "GUSTAVO",
-                    senha: "123456",
+                    usuario: email.text,
+                    senha: senha.text,
                   );
                   if (result) {
                     Navigator.push(

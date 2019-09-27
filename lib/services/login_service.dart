@@ -8,7 +8,7 @@ class LoginService {
     var api = ApiService();
 
     var response = await api.post(
-      url: "http://192.168.1.59/WebApiOficial/Login/ValideLogin",
+      url: "http://192.168.0.106/WebApiOficial/Login/ValideLogin",
       body: json.encode(
         {
           'Login': usuario,
@@ -18,7 +18,8 @@ class LoginService {
     );
 
     var result = json.decode(response);
-    if (result["Codigo"] == 0) return true;
+    if (result["Codigo"] == 0)
+      return true;
     throw new Exception(result["Requisição falhou"]);
   }
 }

@@ -8,10 +8,5 @@ class ApiService {
       headers: {"Content-Type": "application/json"},
     );
     return response.body;
-
   }
-//  Future<String> post({String url}) async {
-//    var response = await http.get(url);
-//    return response.body;
-//  }
 }

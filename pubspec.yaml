@@ -29,7 +29,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_bloc: ^0.21.0
   http: ^0.12.0+2
+
+  # flutter packages pub run build_runner clean
+  # flutter packages pub run build_runner build --delete-conflicting-outputs
+  build_runner: ^1.7.1
+  json_serializable: ^3.2.1+1
+
+  flutter_secure_storage: ^3.3.1+1
+  equatable: ^0.6.0
+  path_provider: ^1.3.0
 
   dashed_container: ^1.0.1
 

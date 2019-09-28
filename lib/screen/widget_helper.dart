@@ -19,4 +19,22 @@ class WidgetHelper {
       actions: actions,
     );
   }
+
+  static void showError(GlobalKey<ScaffoldState> key, String errorMessage) {
+    _onWidgetDidBuild(() {
+      key.currentState.showSnackBar(
+        SnackBar(
+          content: Text(errorMessage),
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 2),
+        ),
+      );
+    });
+  }
+
+  static void _onWidgetDidBuild(Function callback) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      callback();
+    });
+  }
 }

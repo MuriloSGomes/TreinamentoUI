@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:desafioux/screen/room/room_screen.dart';
-import 'package:desafioux/services/login_service.dart';
+import 'package:desafioux/service/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

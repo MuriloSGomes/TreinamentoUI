@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 
 import 'package:desafioux/screen/room/room_screen.dart';
 
+import 'login_register.dart';
+
 class LoginForm extends StatefulWidget {
   @override
   _LoginFormState createState() => _LoginFormState();

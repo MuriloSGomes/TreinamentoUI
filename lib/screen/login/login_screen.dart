@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../screens.dart';
+import 'login_register.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -30,15 +31,43 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    'Register',
-                    style: TextStyle(
-                        fontFamily: 'Comfortaa', color: Colors.grey, fontSize: 16),
+                  Stack(
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[],
+                      ),
+                      RaisedButton(
+                        color: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(90)
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginRegister()),
+                          );
+                        },
+                        child: Text(
+                          'Register',
+                          style: TextStyle(
+                              fontFamily: 'Comfortaa',
+                              color: Colors.grey,
+                              fontSize: 16),
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    'Forgot?',
-                    style: TextStyle(
-                        fontFamily: 'Comfortaa', color: Colors.grey, fontSize: 16),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(90)
+                    ),
+                    child: Text(
+                      'Forgot?',
+                      style: TextStyle(
+                          fontFamily: 'Comfortaa',
+                          color: Colors.grey,
+                          fontSize: 16),
+                    ),
                   ),
                 ],
               ),
